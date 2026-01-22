@@ -1,70 +1,175 @@
 <!doctype html>
 <html lang="ru">
 <head>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '813375481747231');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=813375481747231&ev=PageView&noscript=1"
+    />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Вакансия: Фьючерсный трейдер</title>
+  <meta name="description" content="Ищем опытного фьючерсного трейдера в команду со стабильным плюсовым PnL." />
+
   <style>
-    body{
-      margin:0;
+    :root {
+      --bg: #0b0f19;
+      --card: #121a2b;
+      --text: #e8eefc;
+      --muted: #9fb0d0;
+      --accent: #2AABEE;
+      --accent2: #1f8fd0;
+      --border: rgba(255,255,255,.10);
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(1200px 800px at 30% 15%, rgba(42,171,238,.18), transparent 60%),
+                  radial-gradient(1000px 700px at 80% 85%, rgba(31,143,208,.12), transparent 60%),
+                  var(--bg);
+      color: var(--text);
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:#0b1220;
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
-      padding:24px;
+      padding: 28px 16px;
     }
-    .card{
-      width:min(720px, 100%);
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:18px;
-      padding:26px;
+
+    .wrap {
+      width: min(760px, 100%);
     }
-    h1{
-      margin:0 0 10px;
-      font-size:28px;
-      line-height:1.15;
+
+    .card {
+      background: rgba(18,26,43,.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      backdrop-filter: blur(8px);
     }
-    p{
-      margin:0 0 18px;
-      color:rgba(255,255,255,.78);
-      line-height:1.55;
-      font-size:16px;
+
+    .title {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.15;
+      letter-spacing: .2px;
     }
-    .btn{
-      display:inline-block;
-      padding:14px 18px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:800;
-      background:#22c55e;
-      color:#062014;
-      border:1px solid rgba(34,197,94,.25);
+
+    .subtitle {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 16px;
     }
-    .note{
-      margin-top:12px;
-      font-size:12px;
-      color:rgba(255,255,255,.55);
+
+    .list {
+      margin: 0 0 22px;
+      padding-left: 18px;
+      color: rgba(232,238,252,.9);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .list li { margin: 6px 0; }
+
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      color: #061a24;
+      border: 1px solid rgba(42,171,238,.22);
+      transition: transform .12s ease, filter .12s ease;
+      user-select: none;
+    }
+
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+    .btn:active { transform: translateY(0px); filter: brightness(.98); }
+
+    .note {
+      margin-top: 12px;
+      color: rgba(159,176,208,.75);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(42,171,238,.10);
+      border: 1px solid rgba(42,171,238,.18);
+      color: rgba(232,238,252,.9);
+      font-size: 12px;
+      font-weight: 650;
+      margin-bottom: 10px;
     }
   </style>
 </head>
+
 <body>
-  <main class="card">
-    <h1>Ищем фьючерсного трейдера в команду (плюсовой PnL)</h1>
-    <p>
-      Нужен опытный трейдер по фьючерсам со стабильным положительным результатом (PnL).
-      Системный подход, дисциплина и риск-менеджмент обязательны.
-    </p>
+  <div class="wrap">
+    <div class="card">
+      <div class="tag">Вакансия</div>
 
-    <!---->
-    <a class="btn" href="https://t.me/Head_HrX" target="_blank" rel="noopener">
-      Откликнуться в Telegram
-    </a>
+      <h1 class="title">Ищем фьючерсного трейдера в команду (плюсовой PnL)</h1>
 
-    <div class="note">Замените <b>USERNAME</b> на ваш Telegram (или ссылку на бота/менеджера).</div>
-  </main>
+      <p class="subtitle">
+        Нужен опытный трейдер по фьючерсам со стабильным положительным результатом.
+        Важны системность, дисциплина и грамотный риск-менеджмент.
+      </p>
+
+      <ul class="list">
+        <li>Опыт реальной торговли фьючерсами</li>
+        <li>Подтверждаемый плюсовой PnL</li>
+        <li>Риск-менеджмент и контроль просадок</li>
+        <li>Умение кратко объяснять логику входов/выходов</li>
+      </ul>
+
+      <div class="actions">
+        <!-- ✅ ЗАМЕНИ USERNAME на свой Telegram -->
+        <a class="btn" href="https://t.me/Head_HrX" target="_blank" rel="noopener">
+          Откликнуться в Telegram
+        </a>
+      </div>
+
+      <div class="note">
+        Если удобно — сразу прикрепите скрин/стейтмент с PnL и кратко опишите стиль торговли.
+      </div>
+    </div>
+  </div>
 </body>
 </html>
